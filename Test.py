@@ -20,7 +20,7 @@ class TestBowlingGame(unittest.TestCase):
         args: 
         arg 1: Bowling Game  
 
-        Returns True if the score from self.game equals zero.
+        Returns: bool True if equal, otherwise False
         '''
         self.rollMany(0, 20)
         self.assertEqual(self.game.score(), 0, "Should be 0")
@@ -32,7 +32,7 @@ class TestBowlingGame(unittest.TestCase):
         args: 
         arg 1: self
 
-        Returns True if score from self.game equals 20.
+        Returns: bool True if equal, otherwise False
         '''
         self.rollMany(1, 20)
         self.assertEqual(self.game.score(), 20, "Should be 20")
@@ -45,7 +45,7 @@ class TestBowlingGame(unittest.TestCase):
         args:
         arg 1: self
 
-        Returns True if score from self.game equals 16.
+        Returns: bool True if equal, otherwise False
         '''
         self.game.rolls(5)
         self.game.rolls(5)
@@ -61,7 +61,7 @@ class TestBowlingGame(unittest.TestCase):
         args: 
         arg 1: self
 
-        Returns True if score from self.game equals 24.
+        Returns: bool True if equal, otherwise False
         '''
         self.game.rolls(10)
         self.game.rolls(4)
@@ -76,7 +76,7 @@ class TestBowlingGame(unittest.TestCase):
         args:
         arg 1: self
 
-        Returns True if score from self.game equals 300
+        Returns: bool True if equal, otherwise False
         '''
         self.rollMany(10,12)
         self.assertEqual(self.game.score(), 300, "Should be 300")
@@ -88,7 +88,7 @@ class TestBowlingGame(unittest.TestCase):
         args:
         arg 1: self
 
-        Returns True if self.game is equal to 150.
+        Returns: bool True if equal, otherwise False
         '''
         self.rollMany(5,21)
         self.assertEqual(self.game.score(), 150, "Should be 150")
@@ -107,6 +107,20 @@ class TestBowlingGame(unittest.TestCase):
         self.game.rolls(10)
         self.game.rolls(10)
         self.assertEqual(self.game.score(), 30, 'Should equal 30')
+
+    def testSpareInLastFrame(self):
+        """
+        Test Score if player rolls a strike in the last frame
+        
+        args:
+        arg 1: sself
+        
+        Returns: bool True if equal, otherwise False
+        """
+        self.rollMany(0, 18)
+        self.game.rolls(5)
+        self.game.rolls(5)
+        self.assertEqual(self.game.score(), 10, 'Should equal 10')
 
 if __name__ == '__main__':
     unittest.main()
