@@ -6,9 +6,21 @@ class BowlingGame:
         self.rolls = []
 
     def roll(self, pins):
+        """
+        Appends count of hit pins in a roll to array of rolls
+        
+        pins (int): How many pins have been hit in this roll
+        
+        Returns: None
+        """
         self.rolls.append(pins)
 
     def score(self):
+        """
+        Calculates total score from a game
+
+        Returns: int
+        """
         result = 0
         rollIndex = 0
         for frame in range(10):
@@ -24,18 +36,59 @@ class BowlingGame:
         return result
 
     def isStrike(self, rollIndex):
+        '''
+        Calculates if frame was a Strike by checking if first roll is equal to 10
+
+        rollIndex(int): the index number of the roll 
+
+        Returns: bool True if it is a Strike, False if not
+        '''
         return self.rolls[rollIndex] == 10
 
     def isSpare(self, rollIndex):
+        '''
+        Calculates if frame was a Spare by checking if frame score is equal to 10
+
+        rollIndex(int): the index number of the roll 
+
+        Returns: bool True if it is a Spare, False if not
+        '''
         return self.rolls[rollIndex] + self.rolls[rollIndex + 1] == 10
 
     def strikeScore(self, rollIndex):
+        '''
+        Calculates score of a Strike
+            
+            args:
+                rollIndex(int): the index number of the roll 
+
+            Returns: 
+                (int): sum of Strike frame score and next two rolls
+        '''
         return  10 + self.rolls[rollIndex + 1] + self.rolls[rollIndex + 2]
 
     def spareScore(self, rollIndex):
+        '''
+        Calculates score of a Spare
+            
+            args:
+                rollIndex(int): the index number of the roll 
+
+            Returns: 
+                (int): sum of Spare frame score and next rolls
+        '''
         return  10 + self.rolls[rollIndex + 2]
 
     def frameScore(self, rollIndex):
+        '''
+        Calculates score of a Frame
+            
+            args:
+                rollIndex(int): the index number of the roll 
+
+            Returns: 
+                (int): sum of both rolls in frame
+        '''
         return self.rolls[rollIndex] + self.rolls[rollIndex + 1]
 		
 
