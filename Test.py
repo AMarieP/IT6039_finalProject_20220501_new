@@ -59,8 +59,7 @@ class TestBowlingGame(unittest.TestCase):
 
         Returns: bool True if equal, otherwise False
         '''
-        self.game.roll(5)
-        self.game.roll(5)
+        self.rollMany(5, 2)
         self.game.roll(3)
         self.rollMany(0,17)
         self.assertEqual(self.game.score(), 16, "Should be 16")
@@ -81,7 +80,7 @@ class TestBowlingGame(unittest.TestCase):
         self.rollMany(0,16)
         self.assertEqual(self.game.score(), 24, "Should be 24")
 
-    def testPerfectGame(self):
+    def testAllStrike(self):
         '''
         Test result if player runs a perfect game of all strikes
 
@@ -115,14 +114,12 @@ class TestBowlingGame(unittest.TestCase):
         Returns: bool True if equal, otherwise False
         """
         self.rollMany(0, 18)
-        self.game.roll(10)
-        self.game.roll(10)
-        self.game.roll(10)
+        self.rollMany(10, 3)
         self.assertEqual(self.game.score(), 30, 'Should equal 30')
 
     def testSpareInLastFrame(self):
         """
-        Test Score if player rolls a strike in the last frame
+        Test Score if player rolls a spare in the last frame
         
         args:
         arg 1: sself
@@ -132,6 +129,7 @@ class TestBowlingGame(unittest.TestCase):
         self.rollMany(0, 18)
         self.game.roll(5)
         self.game.roll(5)
+        self.game.roll(0)
         self.assertEqual(self.game.score(), 10, 'Should equal 10')
 
 if __name__ == '__main__':
