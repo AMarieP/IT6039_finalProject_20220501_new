@@ -10,6 +10,18 @@ class TestBowlingGame(unittest.TestCase):
         self.game = BowlingGame.BowlingGame()
 
     def rollMany(self, pins, rolls):
+        """
+        Appends a specified amount of pins scored in a roll 
+        to the list of rolls a specified amount of times.
+
+        args:
+        self: this 
+        pins(int): How many pins have been hit in this roll
+        rolls(int): How many rolls should be added to the list with this amount of pins
+
+        Returns: 
+        None
+        """
         for i in range(rolls):
             self.game.roll(pins)
 
