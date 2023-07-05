@@ -11,7 +11,7 @@ class TestBowlingGame(unittest.TestCase):
 
     def rollMany(self, pins, rolls):
         for i in range(rolls):
-            self.game.rolls(pins)
+            self.game.roll(pins)
 
     def testGutterGame(self):
         '''
@@ -47,9 +47,9 @@ class TestBowlingGame(unittest.TestCase):
 
         Returns: bool True if equal, otherwise False
         '''
-        self.game.rolls(5)
-        self.game.rolls(5)
-        self.game.rolls(3)
+        self.game.roll(5)
+        self.game.roll(5)
+        self.game.roll(3)
         self.rollMany(0,17)
         self.assertEqual(self.game.score(), 16, "Should be 16")
 
@@ -63,9 +63,9 @@ class TestBowlingGame(unittest.TestCase):
 
         Returns: bool True if equal, otherwise False
         '''
-        self.game.rolls(10)
-        self.game.rolls(4)
-        self.game.rolls(3)
+        self.game.roll(10)
+        self.game.roll(4)
+        self.game.roll(3)
         self.rollMany(0,16)
         self.assertEqual(self.game.score(), 24, "Should be 24")
 
@@ -103,9 +103,9 @@ class TestBowlingGame(unittest.TestCase):
         Returns: bool True if equal, otherwise False
         """
         self.rollMany(0, 18)
-        self.game.rolls(10)
-        self.game.rolls(10)
-        self.game.rolls(10)
+        self.game.roll(10)
+        self.game.roll(10)
+        self.game.roll(10)
         self.assertEqual(self.game.score(), 30, 'Should equal 30')
 
     def testSpareInLastFrame(self):
@@ -118,8 +118,8 @@ class TestBowlingGame(unittest.TestCase):
         Returns: bool True if equal, otherwise False
         """
         self.rollMany(0, 18)
-        self.game.rolls(5)
-        self.game.rolls(5)
+        self.game.roll(5)
+        self.game.roll(5)
         self.assertEqual(self.game.score(), 10, 'Should equal 10')
 
 if __name__ == '__main__':
