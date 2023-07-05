@@ -122,7 +122,7 @@ class TestBowlingGame(unittest.TestCase):
 
     def testSpareInLastFrame(self):
         """
-        Test Score if player rolls a strike in the last frame
+        Test Score if player rolls a spare in the last frame
         
         args:
         arg 1: sself
@@ -132,6 +132,7 @@ class TestBowlingGame(unittest.TestCase):
         self.rollMany(0, 18)
         self.game.roll(5)
         self.game.roll(5)
+        self.game.roll(0)
         self.assertEqual(self.game.score(), 10, 'Should equal 10')
 
 if __name__ == '__main__':
