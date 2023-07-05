@@ -9,9 +9,11 @@ class BowlingGame:
         """
         Appends count of hit pins in a roll to array of rolls
         
-        pins (int): How many pins have been hit in this roll
+            args:
+                pins (int): How many pins have been hit in this roll
         
-        Returns: None
+            Returns: 
+                None
         """
         self.rolls.append(pins)
 
@@ -19,7 +21,8 @@ class BowlingGame:
         """
         Calculates total score from a game
 
-        Returns: int
+            Returns: 
+                (int): Total score of the game
         """
         result = 0
         rollIndex = 0
@@ -38,10 +41,12 @@ class BowlingGame:
     def isStrike(self, rollIndex):
         '''
         Calculates if frame was a Strike by checking if first roll is equal to 10
+        
+            args:
+                rollIndex(int): the index number of the roll 
 
-        rollIndex(int): the index number of the roll 
-
-        Returns: bool True if it is a Strike, False if not
+            Returns: 
+                (bool): True if it is a Strike, False if not
         '''
         return self.rolls[rollIndex] == 10
 
@@ -49,9 +54,11 @@ class BowlingGame:
         '''
         Calculates if frame was a Spare by checking if frame score is equal to 10
 
-        rollIndex(int): the index number of the roll 
+            args:
+                rollIndex(int): the index number of the roll 
 
-        Returns: bool True if it is a Spare, False if not
+            Returns: 
+                (bool): True if it is a Spare, False if not
         '''
         return self.rolls[rollIndex] + self.rolls[rollIndex + 1] == 10
 

@@ -14,11 +14,12 @@ class TestBowlingGame(unittest.TestCase):
         Appends a specified amount of pins scored in a roll 
         to the list of rolls a specified amount of times.
 
-        pins(int): How many pins have been hit in this roll
-        rolls(int): How many rolls should be added to the list with this amount of pins
+            args:
+                pins(int): How many pins have been hit in this roll
+                rolls(int): How many rolls should be added to the list with this amount of pins
 
-        Returns: 
-        None
+            Returns: 
+                None
         """
         for i in range(rolls):
             self.game.roll(pins)
@@ -27,7 +28,8 @@ class TestBowlingGame(unittest.TestCase):
         '''
         Tests a gutter game - a game where every ball gutters and no points are scored. 
 
-        Returns: bool True if equal, otherwise False
+            Returns: 
+                (bool): True if equal, otherwise False
         '''
         self.rollMany(0, 20)
         self.assertEqual(self.game.score(), 0, "Should be 0")
@@ -36,7 +38,8 @@ class TestBowlingGame(unittest.TestCase):
         '''
         Test score if every roll is a one
 
-        Returns: bool True if equal, otherwise False
+            Returns: 
+                (bool) True if equal, otherwise False
         '''
         self.rollMany(1, 20)
         self.assertEqual(self.game.score(), 20, "Should be 20")
@@ -45,8 +48,8 @@ class TestBowlingGame(unittest.TestCase):
         '''
         Test score if there is one spare rolled in the game.
 
-
-        Returns: bool True if equal, otherwise False
+            Returns: 
+                (bool) True if equal, otherwise False
         '''
         self.rollMany(5, 2)
         self.game.roll(3)
@@ -59,7 +62,8 @@ class TestBowlingGame(unittest.TestCase):
         points are scored except the strike and the two double point rolls. 
 
 
-        Returns: bool True if equal, otherwise False
+            Returns: 
+                (bool) True if equal, otherwise False
         '''
         self.game.roll(10)
         self.game.roll(4)
@@ -71,8 +75,8 @@ class TestBowlingGame(unittest.TestCase):
         '''
         Test result if player runs a perfect game of all strikes
 
-
-        Returns: bool True if equal, otherwise False
+            Returns: 
+                (bool): True if equal, otherwise False
         '''
         self.rollMany(10,12)
         self.assertEqual(self.game.score(), 300, "Should be 300")
@@ -81,8 +85,8 @@ class TestBowlingGame(unittest.TestCase):
         '''
         Test score if player rolls a game of all spares.
 
-
-        Returns: bool True if equal, otherwise False
+            Returns: 
+                (bool): True if equal, otherwise False
         '''
         self.rollMany(5,21)
         self.assertEqual(self.game.score(), 150, "Should be 150")
@@ -90,9 +94,9 @@ class TestBowlingGame(unittest.TestCase):
     def testStrikeInLastFrame(self):
         """
         Test Score if player rolls a strike in the last frame
-        
             
-        Returns: bool True if equal, otherwise False
+            Returns: 
+                (bool): True if equal, otherwise False
         """
         self.rollMany(0, 18)
         self.rollMany(10, 3)
@@ -102,8 +106,8 @@ class TestBowlingGame(unittest.TestCase):
         """
         Test Score if player rolls a spare in the last frame
         
-        
-        Returns: bool True if equal, otherwise False
+            Returns: 
+                (bool): True if equal, otherwise False
         """
         self.rollMany(0, 18)
         self.game.roll(5)
