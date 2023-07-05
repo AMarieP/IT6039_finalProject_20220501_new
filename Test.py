@@ -80,7 +80,7 @@ class TestBowlingGame(unittest.TestCase):
         self.rollMany(0,16)
         self.assertEqual(self.game.score(), 24, "Should be 24")
 
-    def testPerfectGame(self):
+    def testAllStrike(self):
         '''
         Test result if player runs a perfect game of all strikes
 
