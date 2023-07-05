@@ -34,21 +34,58 @@
 <td class="singlecolumn">Methods defined here:<br>
 <dl><dt><a name="BowlingGame-__init__"><strong>__init__</strong></a>(self)</dt><dd><span class="code">Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</span></dd></dl>
 
-<dl><dt><a name="BowlingGame-calculateFrameScore"><strong>calculateFrameScore</strong></a>(self, rollIndex)</dt></dl>
+<dl><dt><a name="BowlingGame-frameScore"><strong>frameScore</strong></a>(self, rollIndex)</dt><dd><span class="code">Calculates&nbsp;score&nbsp;of&nbsp;a&nbsp;Frame<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rollIndex(int):&nbsp;the&nbsp;index&nbsp;number&nbsp;of&nbsp;the&nbsp;roll&nbsp;<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Returns:&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(int):&nbsp;sum&nbsp;of&nbsp;both&nbsp;rolls&nbsp;in&nbsp;frame</span></dd></dl>
 
-<dl><dt><a name="BowlingGame-frameScore"><strong>frameScore</strong></a>(self, rollIndex)</dt></dl>
+<dl><dt><a name="BowlingGame-isSpare"><strong>isSpare</strong></a>(self, rollIndex)</dt><dd><span class="code">Calculates&nbsp;if&nbsp;frame&nbsp;was&nbsp;a&nbsp;Spare&nbsp;by&nbsp;checking&nbsp;if&nbsp;frame&nbsp;score&nbsp;is&nbsp;equal&nbsp;to&nbsp;10<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rollIndex(int):&nbsp;the&nbsp;index&nbsp;number&nbsp;of&nbsp;the&nbsp;roll&nbsp;<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Returns:&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(bool):&nbsp;True&nbsp;if&nbsp;it&nbsp;is&nbsp;a&nbsp;Spare,&nbsp;False&nbsp;if&nbsp;not</span></dd></dl>
 
-<dl><dt><a name="BowlingGame-isSpare"><strong>isSpare</strong></a>(self, rollIndex)</dt></dl>
+<dl><dt><a name="BowlingGame-isStrike"><strong>isStrike</strong></a>(self, rollIndex)</dt><dd><span class="code">Calculates&nbsp;if&nbsp;frame&nbsp;was&nbsp;a&nbsp;Strike&nbsp;by&nbsp;checking&nbsp;if&nbsp;first&nbsp;roll&nbsp;is&nbsp;equal&nbsp;to&nbsp;10<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rollIndex(int):&nbsp;the&nbsp;index&nbsp;number&nbsp;of&nbsp;the&nbsp;roll&nbsp;<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Returns:&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(bool):&nbsp;True&nbsp;if&nbsp;it&nbsp;is&nbsp;a&nbsp;Strike,&nbsp;False&nbsp;if&nbsp;not</span></dd></dl>
 
-<dl><dt><a name="BowlingGame-isStrike"><strong>isStrike</strong></a>(self, rollIndex)</dt></dl>
+<dl><dt><a name="BowlingGame-roll"><strong>roll</strong></a>(self, pins)</dt><dd><span class="code">Appends&nbsp;count&nbsp;of&nbsp;hit&nbsp;pins&nbsp;in&nbsp;a&nbsp;roll&nbsp;to&nbsp;array&nbsp;of&nbsp;rolls<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pins&nbsp;(int):&nbsp;How&nbsp;many&nbsp;pins&nbsp;have&nbsp;been&nbsp;hit&nbsp;in&nbsp;this&nbsp;roll<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Returns:&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;None</span></dd></dl>
 
-<dl><dt><a name="BowlingGame-roll"><strong>roll</strong></a>(self, pins)</dt></dl>
+<dl><dt><a name="BowlingGame-score"><strong>score</strong></a>(self)</dt><dd><span class="code">Calculates&nbsp;total&nbsp;score&nbsp;from&nbsp;a&nbsp;game<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Returns:&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(int):&nbsp;Total&nbsp;score&nbsp;of&nbsp;the&nbsp;game</span></dd></dl>
 
-<dl><dt><a name="BowlingGame-score"><strong>score</strong></a>(self)</dt></dl>
+<dl><dt><a name="BowlingGame-spareScore"><strong>spareScore</strong></a>(self, rollIndex)</dt><dd><span class="code">Calculates&nbsp;score&nbsp;of&nbsp;a&nbsp;Spare<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rollIndex(int):&nbsp;the&nbsp;index&nbsp;number&nbsp;of&nbsp;the&nbsp;roll&nbsp;<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Returns:&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(int):&nbsp;sum&nbsp;of&nbsp;Spare&nbsp;frame&nbsp;score&nbsp;and&nbsp;next&nbsp;rolls</span></dd></dl>
 
-<dl><dt><a name="BowlingGame-spareScore"><strong>spareScore</strong></a>(self, rollIndex)</dt></dl>
-
-<dl><dt><a name="BowlingGame-strikeScore"><strong>strikeScore</strong></a>(self, rollIndex)</dt></dl>
+<dl><dt><a name="BowlingGame-strikeScore"><strong>strikeScore</strong></a>(self, rollIndex)</dt><dd><span class="code">Calculates&nbsp;score&nbsp;of&nbsp;a&nbsp;Strike<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rollIndex(int):&nbsp;the&nbsp;index&nbsp;number&nbsp;of&nbsp;the&nbsp;roll&nbsp;<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Returns:&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(int):&nbsp;sum&nbsp;of&nbsp;Strike&nbsp;frame&nbsp;score&nbsp;and&nbsp;next&nbsp;two&nbsp;rolls</span></dd></dl>
 
 <hr>
 Data descriptors defined here:<br>
