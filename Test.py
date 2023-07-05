@@ -59,8 +59,7 @@ class TestBowlingGame(unittest.TestCase):
 
         Returns: bool True if equal, otherwise False
         '''
-        self.game.roll(5)
-        self.game.roll(5)
+        self.rollMany(5, 2)
         self.game.roll(3)
         self.rollMany(0,17)
         self.assertEqual(self.game.score(), 16, "Should be 16")
@@ -115,9 +114,7 @@ class TestBowlingGame(unittest.TestCase):
         Returns: bool True if equal, otherwise False
         """
         self.rollMany(0, 18)
-        self.game.roll(10)
-        self.game.roll(10)
-        self.game.roll(10)
+        self.rollMany(10, 3)
         self.assertEqual(self.game.score(), 30, 'Should equal 30')
 
     def testSpareInLastFrame(self):
